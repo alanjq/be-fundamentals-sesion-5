@@ -6,9 +6,9 @@ const port = 3000
 
 // Creamos el servidor
 const server = http.createServer((request, response) => {
-    response.statusCode = 200
-    response.setHeader('Content-Type', 'text/plain')
-    response.end('Hello World.')
+    response.setHeader('Content-Type', 'application/json')
+    response.writeHead(200)
+    response.end(JSON.stringify({text: 'Hello World.'}))
 })
 
 // Escuchamos peticiones en el puerto indicado
